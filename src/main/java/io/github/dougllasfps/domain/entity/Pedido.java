@@ -1,12 +1,19 @@
 package io.github.dougllasfps.domain.entity;
 
 import ch.qos.logback.core.net.server.Client;
+import org.springframework.data.annotation.Id;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Pedido {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_pedido")
     private Integer id;
     private Cliente cliente;
     private LocalDate dataPedido;

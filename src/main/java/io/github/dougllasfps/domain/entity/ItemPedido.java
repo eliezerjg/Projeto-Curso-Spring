@@ -1,9 +1,25 @@
 package io.github.dougllasfps.domain.entity;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 public class ItemPedido {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+
+    @ManyToOne
+    @JoinColumn(name = "id_pedido")
     private Pedido pedido;
+
+    @ManyToOne
+    @JoinColumn(name = "id_produto")
     private Produto produto;
     private Integer quantidade;
 

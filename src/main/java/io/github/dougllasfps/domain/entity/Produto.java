@@ -1,11 +1,19 @@
 package io.github.dougllasfps.domain.entity;
 
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.math.BigDecimal;
 
 
 
 public class Produto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_produto")
     private Integer id;
     private String descricao;
     private BigDecimal preco;
